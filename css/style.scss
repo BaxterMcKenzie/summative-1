@@ -1,0 +1,858 @@
+@import url("https://fonts.googleapis.com/css2?family=Titan+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+// CSS Reset
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+// Varibles
+
+
+$header-font-family: "Titan One", sans-serif;
+$body-font-family: "Montserrat", sans-serif;
+$navy: #1c3159;
+$mid-blue: #2b3e98;
+$light-blue: #6591cc;
+$white: #fbfcf1;
+$background-card-color: rgba($color: $white, $alpha: .3);
+
+
+// End of varibles
+
+// Mixins
+
+@mixin buttons-change () {
+        color: $navy;
+        background-color: rgba($white, $alpha: .8);
+}
+
+@mixin column-container () {
+    img {
+        width: 100%;
+        border-radius: 20px;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    h2 {
+        font-size: 25px;
+        padding-top: 5px;
+    }
+
+    h6 {
+        font-family: $body-font-family;
+        color: $navy;
+        font-size: 16px;
+        font-weight: 800;
+        padding-top: 20px;
+        padding-bottom: 25px;
+    }
+
+    p {
+        text-align: left;
+        padding-top: 15px;
+    }
+}
+
+@mixin left-align-body-text () {
+    font-family: $body-font-family;
+    color: $navy;
+    font-size: 16px;
+    text-align: left;
+    font-weight: 500;
+}
+
+@mixin center-align-body-text () {
+    font-family: $body-font-family;
+    color: $navy;
+    font-size: 16px;
+    text-align:center;
+    font-weight: 500;
+}
+
+@mixin center-align-button-text() {
+    font-family: $body-font-family;
+    color: $white;
+    font-size: 16px;
+    text-align: center;
+    font-weight: 500;
+}
+
+@mixin left-align-bold-700-text() {
+    font-family: $body-font-family;
+    color: $navy;
+    font-size: 16px;
+    text-align: left;
+    font-weight: 700;
+}
+
+@mixin left-align-bold-900-text() {
+    font-family: $body-font-family;
+    color: $navy;
+    font-size: 16px;
+    text-align: left;
+    font-weight: 900;
+}
+
+@mixin box-shadow() {
+    box-shadow: -8px 9px 10px 1px rgba(0,0,0,0.4);
+-webkit-box-shadow: -8px 9px 10px 1px rgba(0,0,0,0.4);
+-moz-box-shadow: -8px 9px 10px 1px rgba(0,0,0,0.4);
+}
+
+@mixin button-glow() {
+    box-shadow: 2px 1px 13px 7px rgba(28,49,89,0.8);
+    -webkit-box-shadow: 2px 1px 13px 7px rgba(28,49,89,0.8);
+    -moz-box-shadow: 2px 1px 13px 7px rgba(28,49,89,0.8);
+}
+
+
+
+// Universal
+
+h2 {
+    font-family: $header-font-family;
+    font-size: 36px;
+    color: $navy;
+}
+
+h3 {
+    font-family: $header-font-family;
+    color: $navy;
+    text-align: center;
+    padding-bottom: 10px;
+    font-size: 22px;
+}
+
+h4 {
+    font-family: $body-font-family;
+    font-weight: 400;
+}
+
+p {
+    font-family: $body-font-family;
+    color: $navy;
+    text-align: center;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+label {
+    font-weight: 500;
+}
+
+// background image
+
+body {
+    background-image: url("/img/background-for-website-desktop.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/* Navigation */
+.navigation-header {
+    background-color: $mid-blue;
+    padding: 0 15px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* LOGO */
+
+.logo-container {
+    width: 12%;
+}
+
+/* Navigation Items */
+.navigation-items {
+    display: flex;
+    gap: 40px;
+}
+
+.navigation-items>a {
+    color: white;
+    text-decoration: none;
+    font-family: $header-font-family;
+    font-weight: 500;
+    font-size: 12px;
+}
+
+/* Hamburger */
+.hamburger {
+    display: none;
+    font-size: 30px;
+    font-weight: 800;
+    color: white;
+}
+
+// Hero
+
+.hero__image__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    background-image: url(/compressed-img/gallery-image-15.webp);
+    background-size: cover;
+    background-position: center;
+    padding-top: 60px;
+    padding-bottom: 150px;
+    height: 500px;
+    width: 100%;
+
+    .hero__text__wrapper {
+        position: relative;
+        width: 70%;
+        background-color: rgba($white, .5);
+        border-radius: 30px;
+        padding: 20px;
+        z-index: 30;
+    }
+
+    .hero__text__wrapper__blur {
+        position: absolute;
+        color: rgba($color: #000000, $alpha: 0);
+        width: 70%;
+        background-color: rgba($white, .4);
+        border-radius: 30px;
+        padding: 20px;
+        filter: blur(8px);
+    }
+
+
+
+}
+
+.hero__buttons>a {
+    position: relative;
+    color: $white;
+    text-decoration: none;
+    font-family: $body-font-family;
+    font-weight: 500;
+    background-color: rgba($navy, $alpha: .8);
+    margin: 10px;
+    padding: 20px 50px;
+    border-radius: 10px; 
+    @include button-glow;
+}
+
+
+
+.hero__buttons>a:hover {
+    @include buttons-change()
+}
+
+
+// End of hero
+
+// Mission Statement container
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 40px 20px 50px 20px;
+    width: 100%;
+
+}
+
+.left__container {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+    position: relative;
+
+    img {
+        border-radius: 30px;
+        width: 100%;
+        @include box-shadow
+    }
+
+    .image__container__text__overlay {
+        position: absolute;
+        left: 25%;
+        bottom: 30%;
+        background-color: rgba($color: $white, $alpha: .6);
+        padding: 10px;
+        border-radius: 10px;
+        width: 50%;
+        text-align: center;
+    }
+}
+
+.right__container {
+
+    width: 48%;
+
+
+    .text__container {
+        background-color: rgba($color: $white, $alpha: .4);
+        border-radius: 30px;
+        padding: 30px 25px 25px 40px;
+        margin-bottom: 10px;
+        @include box-shadow
+    }
+
+    p {
+        @include left-align-body-text;
+    }
+}
+
+// end of mission statement container
+
+// Quote text
+
+.break {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $mid-blue;
+    padding: 20px 40px 40px 20px;
+
+    h2 {
+        color: $white;
+        font-weight: 200;
+        text-align: center;
+    }
+
+    h4 {
+        color: $white;
+        font-style: italic;
+        text-align: center;
+        padding-bottom: 10px;
+    }
+
+    p {
+        color: white;
+        font-weight: 200;
+
+    }
+}
+
+// end quote text
+
+// Who is NZPI
+
+#community {
+    object-fit: cover;
+    object-position: -400px;
+    height: 720px;
+}
+
+// Who is NZPI End
+
+// Meet the team
+
+.meet__the__team {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.name__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $background-card-color;
+    width: 30%;
+    border-radius: 30px;
+    padding: 20px;
+    text-align: center;
+    @include box-shadow;
+
+    img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+
+    h2 {
+        font-size: 25px;
+        padding-top: 5px;
+    }
+
+    h6 {
+        font-family: $body-font-family;
+        color: $navy;
+        font-size: 16px;
+        font-weight: 800;
+        padding-top: 20px;
+        padding-bottom: 25px;
+    }
+
+    p {
+        @include left-align-body-text;
+    }
+
+}
+
+// Footer
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $mid-blue;
+    padding: 20px;
+    width: 100%;
+}
+
+.footer__logo {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20%;
+
+    img {
+        margin: 20px;
+        width: 100%;
+    }
+
+    p {
+        color: White;
+    }
+
+}
+
+.footer__nav>a {
+    text-decoration: none;
+    font-family: $body-font-family;
+    color: $white;
+    padding: 10px;
+}
+
+.socials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 30px;
+
+    i {
+        color: $white;
+        margin: 2px;
+    }
+}
+
+// End of footer
+
+// End of home
+
+// Get Involved
+
+#get-involved {
+        background-image: url(/compressed-img/nzpi-home-hero.webp);
+}
+
+
+#bottle-cap {
+    object-fit: cover;
+    height: 600px;
+}
+
+// Form
+
+form {
+    margin-top: 25px;
+    width: 100%;
+
+    label {
+        font-family: $body-font-family;
+        color: $navy;
+        line-height: 20px;
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    input {
+        border-radius: 5px;
+        border: $navy 2px solid;
+        width: 90%;
+        padding: 5px;
+        padding-right: 200px;
+        margin-top: 5px;
+        margin-bottom: 20px;
+    }
+
+    #message {
+        padding-top: 50px;
+    }
+}
+
+.button__wrapper {
+    padding-top: 20px;
+    width: 50%;
+}
+
+
+// Radio buttons
+
+.radio-button {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.radio-button input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+    border: $navy 2px solid;
+    border-radius: 50px;
+}
+
+.radio-button input:checked~.checkmark {
+    background-color: $navy;
+}
+
+//   Middle container
+
+.middle__container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+
+    img {
+        border-radius: 30px;
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        @include box-shadow
+    }
+
+    .image__container__text__overlay {
+        position: absolute;
+        left: 25%;
+        bottom: 30%;
+        background-color: rgba($color: $white, $alpha: .4);
+        padding: 30px;
+        border-radius: 10px;
+        width: 50%;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 60px;
+    }
+}
+
+// Bento Grid
+
+.grid-parent {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    grid-gap: 1em;
+    max-width: 100%;
+    padding: 40px;
+}
+
+.grid-parent div {
+    padding: 40px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.one {
+    grid-column: 1/3;
+    grid-row: 1/5;
+    background-image: url(/compressed-img/gallery-image-13.webp);
+    background-size: cover;
+    background-position: center;
+    @include box-shadow
+}
+
+.two {
+    grid-column: 3/5;
+    grid-row: 1/3;
+    background-image: url(/compressed-img/gallery-image-19.webp);
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    @include box-shadow
+}
+
+.three {
+    grid-column: 5/7;
+    grid-row: 1/3;
+    background-image: url(/compressed-img/gallery-image-14.webp);
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    @include box-shadow
+}
+
+.four {
+    grid-column: 3/5;
+    grid-row: 3/5;
+    background-image: url(/compressed-img/gallery-image-20.webp);
+    background-size: cover;
+    background-position: center;
+    @include box-shadow
+}
+
+.five {
+    grid-column: 5/7;
+    grid-row: 3/7;
+    background-image: url(/compressed-img/gallery-image-18.webp);
+    background-size: cover;
+    background-position: center;
+    @include box-shadow
+}
+
+.six {
+    grid-column: 1/5;
+    grid-row: 5/7;
+    background-image: url(/compressed-img/gallery-image-16.webp);
+    background-size: cover;
+    background-position: center;
+    @include box-shadow
+}
+
+// How we work
+
+.four__column__container {
+    width: 24%;
+
+    @include column-container;
+
+    img {
+        @include box-shadow
+    }
+
+    .text__card {
+        @include box-shadow
+    }
+}
+
+
+.container__four__column {
+    display: flex;
+    align-items: start;
+    justify-content: space-around;
+    padding: 40px 20px 50px 20px;
+    width: 100%;
+
+}
+
+// how we work end
+
+// Map
+
+#map {
+    border-radius: 40px;
+    margin: 50px;
+    width: 90%;
+    @include box-shadow
+}
+
+// end of map
+
+.sponser__container {
+    display: flex;
+    overflow: scroll;
+    background-color: $white;
+    object-fit: contain;
+}
+
+.sponser {
+    img {
+        height: 150px;
+        margin-right: 10px;
+    }
+}
+
+// Science data
+
+// hero
+
+    #science {
+        background-image: url(/compressed-img/gallery-image-8.webp);
+    }
+
+// 
+
+// submissions
+
+.three__column__container {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+
+    @include column-container()
+}
+
+.read__buttons>a {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: $white;
+    text-decoration: none;
+    font-family: $body-font-family;
+    font-weight: 400;
+    background-color: rgba($navy, $alpha: .8);
+    padding: 10px;
+    border-radius: 10px;
+    @include center-align-button-text;
+    @include button-glow;
+}
+
+.read__buttons>a:hover {
+    @include buttons-change()
+}
+
+// Resources
+
+#resources {
+    background-image: url(/compressed-img/nestboxes-monitoring.webp);
+}
+
+// Monitoring
+
+.two__column__container {
+    width: 45%;
+
+    @include column-container;
+
+    img {
+        @include box-shadow
+    }
+
+    .text__card {
+        @include box-shadow
+    }
+}
+
+.text__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $background-card-color;
+    padding: 20px;
+    border-radius: 20px;
+    margin-top: 20px;
+    
+        p{
+          @include left-align-body-text()  
+        }
+}
+
+.text__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $background-card-color;
+    padding: 20px;
+    border-radius: 20px;
+    margin-top: 20px;
+
+    p{
+      @include left-align-body-text()  
+    }
+
+    .center {
+        @include center-align-body-text()
+    }
+
+}
+
+.container__two__column {
+    display: flex;
+    align-items: start;
+    justify-content: space-around;
+    padding: 40px 20px 50px 20px;
+    width: 100%;
+
+}
+
+// Blog
+
+#blog {
+    background-image: url(/compressed-img/article-3.webp);
+}
+
+// Publication
+
+.text__card__single {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $background-card-color;
+    padding: 40px;
+    border-radius: 20px;
+    margin: 20px;
+    width: 80%;
+    @include box-shadow;
+
+    .center {
+        @include center-align-body-text()
+    }
+
+    .left {
+        @include left-align-body-text()
+    }
+
+    .left__700 {
+        @include left-align-bold-700-text()
+    }
+
+    .left__900 {
+        @include left-align-bold-900-text()
+    }
+}
+
+#sighting {
+    background-image: url(/compressed-img/penguin-2.webp);
+}
+
+#donate {
+    background-image: url(/compressed-img/gallery-image-19.webp);
+}
+
+#contact {
+    background-image: url(/compressed-img/gallery-image-12.webp);
+}
+
+// Media Querries imports
+@import 'media-queries';
